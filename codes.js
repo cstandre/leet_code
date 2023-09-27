@@ -53,3 +53,21 @@ let containsDuplicate = function(nums) {
 // Constraints:
     // 1 <= nums.length <= 105
     // -109 <= nums[i] <= 109
+
+
+// IsValidParentheses
+
+let isValid = function(s) {
+  if (s.includes('(' ,')', '{', '}', '[', ']') && s.length > 1) {
+      for (let i = 0; i < s.length; i++) {
+          let char1 = s[i]
+          let char2 = s[i + 1]
+          console.log(char1, char2)
+          if (char1 === '(' && char2 === '') return false
+          else if (char1 === '[' && char2 !== ']') return false
+          else if (char1 === '{' && char2 !== '}') return false
+          else return true
+      }
+  }
+  return false;
+};
